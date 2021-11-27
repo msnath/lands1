@@ -1,0 +1,28 @@
+@mixin filter-title {
+  grid-area: title;
+  padding: 0.5rem 1.125rem;
+
+  color: var(--black-light);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Montserrat;
+  line-height: 1.5rem;
+  text-align: left;
+}
+
+@mixin filter-clear {
+  grid-area: clearall;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  text-align: right;
+}
+
+@mixin filter-options {
+  width: 100%;
+  height: 100%;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  margin: 0.5rem 0rem;
+  overflow: auto;
+}

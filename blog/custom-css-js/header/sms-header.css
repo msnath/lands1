@@ -1,0 +1,152 @@
+/* Header */
+.sms-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #101010;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+.sms-header__main {
+  align-self: center;
+  width: 100%;
+  height: 3.75rem;
+  max-width: 80rem;
+  min-height: 3.75rem;
+  max-height: 3.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  align-items: center;
+  padding: 0rem 1rem;
+}
+.sms-header__logo {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  max-width: 20rem;
+  max-height: 3rem;
+  padding: 0.375rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sms-header__logo > a {
+  display: block;
+  height: 100%;
+  max-height: 3rem;
+}
+.sms-header__logo > a > img {
+  height: 100%;
+  content: url("/blog/wp-content/uploads/2021/11/secure-my-scholarship-logo-no-tagline.png");
+}
+/* Navigation */
+.sms-header__nav {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: flex-end;
+}
+.sms-header__nav > * {
+  color: #ffffff;
+  padding: 0rem 1.25rem;
+}
+.sms-header__nav > a {
+  display: none;
+}
+.sms-header__nav-menu-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.sms-header__nav-menu {
+  cursor: pointer;
+}
+/* Nav Dropdown (Appears on Desktop > 1280px) */
+.sms-header__nav-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  right: 0rem;
+  bottom: -1.25rem;
+  transform: translateY(100%);
+  width: 12.5rem;
+  background: #1a1a1a;
+  padding: 2rem 1.25rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.sms-header__nav-dropdown::after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 15rem;
+  height: 1.125rem;
+  background: #0088e9;
+  transform: rotate(-5.71deg);
+}
+.sms-header__nav-dropdown > ul {
+  display: grid;
+  row-gap: 1.5rem;
+}
+.sms-header__nav-dropdown > ul > li > a {
+  color: #8f8f90;
+}
+/* Nav Page */
+.sms-header__nav-page {
+  display: none;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  transform: translateY(100%);
+  background: #101010;
+  width: 100%;
+  height: calc(100vh - 3.75rem);
+  padding: 1rem;
+}
+.sms-header__nav-page > div {
+  height: 3rem;
+}
+.sms-header__nav-page > li {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+.sms-header__nav-page > li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0rem;
+  width: 100%;
+  height: 0.125rem;
+  background: #23272b;
+  border-radius: 0.125rem;
+}
+.sms-header__nav-page > li > a {
+  color: #bcc5d3;
+  font-size: 1.125rem;
+  display: block;
+  width: 100%;
+}
+@media (hover: hover) and (pointer: fine) {
+  .sms-header__nav-dropdown > ul > li > a:hover {
+    color: #ffffff;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .sms-header__logo > a > img {
+    content: url("/blog/wp-content/uploads/2021/11/secure-my-scholarship-logo-tagline.png");
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .sms-header__nav > a {
+    display: block;
+  }
+}

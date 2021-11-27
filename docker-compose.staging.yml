@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  nginx:
+    container_name: nginx-stg
+    image: lockandstock/sms-nginx:stg
+    restart: always
+    ports: 
+      - 80:80
+
+  sms:
+    container_name: next-stg
+    image: lockandstock/sms-next:stg
+    restart: always
+    expose: 
+      - 3000
+
+  forms:
+    container_name: forms-stg
+    image: lockandstock/forms-next:stg
+    restart: always
+    expose:
+      - 9000
+
+  blog:
+    container_name: blog-stg
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./blog:/var/www/html/blog
+    working_dir: /var/www/html/blog

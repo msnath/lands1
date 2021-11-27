@@ -1,0 +1,11 @@
+.button {
+  color: var(--grey-light);
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: Montserrat;
+  white-space: nowrap;
+}
+
+.button:active {
+  color: var(--blue);
+}

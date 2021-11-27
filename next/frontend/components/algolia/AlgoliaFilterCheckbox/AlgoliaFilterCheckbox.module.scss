@@ -1,0 +1,75 @@
+@import "../algolia.mixins.scss";
+
+.filter_checkbox {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.head {
+  display: grid;
+  grid-template-areas:
+    "title clearall"
+    "search search"
+    "selected selected";
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.title {
+  @include filter-title;
+}
+
+.clear {
+  @include filter-clear;
+}
+
+.search {
+  grid-area: search;
+  background: var(--white-light);
+  border-radius: 0.625rem;
+  padding: 0.6875rem 1.3125rem;
+
+  &,
+  &::placeholder {
+    color: var(--grey);
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3125rem;
+    text-align: left;
+  }
+}
+
+.selected {
+  grid-area: selected;
+  height: 1.125rem;
+
+  color: var(--grey);
+  font-family: Mulish;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  text-align: left;
+  padding: 0rem 0.5rem;
+}
+
+.options {
+  @include filter-options;
+}
+
+.load_more {
+  & > button {
+    color: var(--grey-light);
+    font-family: Mulish;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  margin: 0 auto;
+  width: max-content;
+  padding: 0.75rem 1rem;
+}

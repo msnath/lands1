@@ -1,0 +1,148 @@
+@import "../algolia.mixins.scss";
+@import "../../../styles/app.mixins.scss";
+
+.filter_range {
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  display: grid;
+  grid-template-areas:
+    "title clearall"
+    "currency currency"
+    "selected selected";
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.title {
+  @include filter-title;
+}
+
+.clear {
+  @include filter-clear;
+}
+
+.currency {
+  width: 100%;
+  height: min-content;
+  padding: 0.5rem;
+
+  .selected {
+    width: 100%;
+    background: var(--grey-lightest);
+    border-radius: 0.25rem;
+    border-right: 0.5rem solid var(--grey-lightest);
+  }
+
+  .menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25rem;
+    max-height: 50vh;
+    background: var(--white);
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    @include boxshadow;
+    z-index: 1;
+  }
+
+  .button {
+    width: 100%;
+    border-radius: 0.25rem;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: var(--grey-lightest);
+      }
+    }
+  }
+}
+
+.min_max {
+  display: grid;
+  grid-template-areas:
+    "min-label max-label"
+    "min-input max-input";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  row-gap: 0.25rem;
+  width: 100%;
+  padding: 1rem;
+
+  label {
+    color: var(--black-light);
+    font-family: Mulish;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.125rem;
+    text-align: left;
+  }
+  input[type="number"] {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background: var(--grey-lightest);
+    &,
+    &::placeholder {
+      color: var(--black-light);
+      font-family: Mulish;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.125rem;
+      text-align: left;
+    }
+    &::placeholder {
+      color: var(--grey);
+    }
+  }
+
+  label:nth-child(1) {
+    grid-area: min-label;
+  }
+  input[type="number"]:nth-child(2) {
+    width: 100%;
+    grid-area: min-input;
+  }
+  label:nth-child(3) {
+    grid-area: max-label;
+  }
+  input[type="number"]:nth-child(4) {
+    width: 100%;
+    grid-area: max-input;
+  }
+}
+
+.error {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+
+  p {
+    color: #ff4c4c;
+    font-family: Mulish;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.125rem;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 30rem) {
+  .min_max {
+    grid-template-areas:
+      "min-label"
+      "min-input"
+      "max-label"
+      "max-input";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+}

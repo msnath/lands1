@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  nginx:
+    container_name: nginx-prd
+    image: lockandstock/sms-nginx:prd
+    restart: always
+    ports: 
+      - 80:80
+
+  sms:
+    container_name: next-prd
+    image: lockandstock/sms-next:prd
+    restart: always
+    expose: 
+      - 3000
+
+  forms:
+    container_name: forms-prd
+    image: lockandstock/forms-next:prd
+    restart: always
+    expose:
+      - 9000
+
+  blog:
+    container_name: blog-prd
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./blog:/var/www/html/blog
+    working_dir: /var/www/html/blog

@@ -1,0 +1,44 @@
+.sms-reset,
+.sms-reset *
+{
+  position: relative;
+  background: transparent;
+  padding: 0rem;
+  margin: 0rem;
+  
+  color: #101010;
+  font-size: 1rem;
+  font-style: normal;
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 0rem;
+  line-height: 150%;
+  text-decoration: none;
+  word-wrap: break-word;
+  vertical-align: baseline;
+  list-style: none;
+  
+  box-sizing: border-box;
+  border: 0rem;
+  border-spacing: 0rem;
+  border-collapse: collapse;
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: #ebebf0;
+  margin: 0.125rem;
+  border-radius: 1rem;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb {
+  background: #23272b;
+  border-radius: 1rem;
+  border: 0.1rem solid transparent;
+  background-clip: padding-box;
+}

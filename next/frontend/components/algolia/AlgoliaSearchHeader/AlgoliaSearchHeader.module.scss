@@ -1,0 +1,138 @@
+@import "../../../styles/app.mixins.scss";
+
+.search_header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 2rem);
+    background: var(--black);
+  }
+}
+
+.display {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 76rem;
+  padding: 0rem 1.5rem 1rem 1.5rem;
+}
+
+.count_container {
+  align-self: center;
+  width: 100%;
+}
+
+.query {
+  margin: 0.375rem 0rem;
+
+  color: var(--white);
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: left;
+  @include textoverflow(2);
+}
+
+.switch {
+  width: 100%;
+  & > p {
+    color: var(--grey);
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: left;
+  }
+  &_box {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 2rem;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    background: #23272a;
+    border-radius: 0.625rem;
+
+    & > div:nth-child(2) {
+      width: 0.125rem;
+      height: 75%;
+      background: var(--white);
+      border-radius: 0.25rem;
+    }
+    & > div:nth-child(3) {
+      p:nth-child(1) {
+        color: var(--blue);
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.125rem;
+        text-align: left;
+      }
+      p:nth-child(2) {
+        margin-top: 0.25rem;
+        color: var(--grey);
+        font-family: Montserrat;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.125rem;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.count {
+  color: var(--grey-light);
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  text-align: left;
+
+  & span {
+    color: var(--grey-light);
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.125rem;
+    text-align: left;
+  }
+}
+
+.search_box {
+  width: 100%;
+  max-width: 76rem;
+  margin-bottom: 0.5rem;
+  padding: 0rem 1.25rem;
+}
+
+@media only screen and (min-width: 30rem) {
+  .switch {
+    &_box {
+      width: max-content;
+    }
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  .display {
+    flex-direction: row;
+  }
+
+  .switch {
+    width: max-content;
+  }
+}

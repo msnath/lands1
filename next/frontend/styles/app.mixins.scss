@@ -1,0 +1,40 @@
+@mixin hover {
+  transition: all 300ms ease;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-0.75rem);
+    }
+  }
+}
+
+@mixin hoverp {
+  transition: all 300ms ease;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-15%);
+    }
+  }
+}
+
+@mixin hoverdefault {
+  transition: all 300ms ease;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-0.25rem);
+      @include boxshadow;
+    }
+  }
+}
+
+@mixin boxshadow {
+  box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+@mixin textoverflow($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
